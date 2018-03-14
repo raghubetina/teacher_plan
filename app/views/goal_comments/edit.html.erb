@@ -42,7 +42,7 @@
           Goal
         </label>
 
-        <input type="text" id="goal_id" name="goal_id" placeholder="Goal" class="form-control" value="<%= @goal_comment.goal_id %>">
+        <%= select_tag(:goal_id, options_from_collection_for_select(Goal.all, :id, :description, @goal_comment.goal_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
