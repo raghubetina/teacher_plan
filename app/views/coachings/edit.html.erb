@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @coaching.errors.any? %>
+  <% @coaching.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Coaching #<%= @coaching.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_coaching/<%= @coaching.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <input type="text" id="improvement_plan_id" name="improvement_plan_id" placeholder="Improvement plan" class="form-control" value="<%= @coaching.improvement_plan_id %>">
+      </div>
+
+      <!-- Label and input for coach_id -->
+      <div class="form-group">
+        <label for="coach_id" class="control-label">
+          Coach
+        </label>
+
+        <input type="text" id="coach_id" name="coach_id" placeholder="Coach" class="form-control" value="<%= @coaching.coach_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Coaching
+      </button>
+      or
+      <a href="/coachings/<%= @coaching.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

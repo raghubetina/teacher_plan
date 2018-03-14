@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Coaching #<%= @coaching.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Improvement plan</dt>
+      <dd><%= @coaching.improvement_plan_id %></dd>
+
+      <dt>Coach</dt>
+      <dd><%= @coaching.coach_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/coachings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/coachings/<%= @coaching.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_coaching/<%= @coaching.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

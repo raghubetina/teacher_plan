@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Coachings
+    <a href="/coachings/new" class="btn btn-lg btn-success">New Coaching</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Improvement plan</th>
+        <th>Coach</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @coachings.each do |coaching| %>
+      <tr>
+        <td><%= coaching.improvement_plan_id %></td>
+        <td><%= coaching.coach_id %></td>
+        <td>
+          <a href="/coachings/<%= coaching.id %>" class="btn btn-primary">Show</a>
+          <a href="/coachings/<%= coaching.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_coaching/<%= coaching.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

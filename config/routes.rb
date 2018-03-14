@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Coaching resource:
+  # CREATE
+  get "/coachings/new", :controller => "coachings", :action => "new"
+  post "/create_coaching", :controller => "coachings", :action => "create"
+
+  # READ
+  get "/coachings", :controller => "coachings", :action => "index"
+  get "/coachings/:id", :controller => "coachings", :action => "show"
+
+  # UPDATE
+  get "/coachings/:id/edit", :controller => "coachings", :action => "edit"
+  post "/update_coaching/:id", :controller => "coachings", :action => "update"
+
+  # DELETE
+  get "/delete_coaching/:id", :controller => "coachings", :action => "destroy"
+  #------------------------------
+
   # Routes for the Action_step resource:
   # CREATE
   get "/action_steps/new", :controller => "action_steps", :action => "new"
