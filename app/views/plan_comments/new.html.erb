@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @plan_comment.errors.any? %>
+  <% @plan_comment.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Plan Comment</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_plan_comment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @plan_comment.user_id %>">
+      </div>
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @plan_comment.body %></textarea>
+      </div>
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <input type="text" id="improvement_plan_id" name="improvement_plan_id" placeholder="Improvement plan" class="form-control" value="<%= @plan_comment.improvement_plan_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Plan Comment
+      </button>
+      or
+      <a href="/plan_comments">Cancel</a>
+    </form>
+  </div>
+</div>

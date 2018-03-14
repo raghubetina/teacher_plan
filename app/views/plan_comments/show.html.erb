@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Plan Comment #<%= @plan_comment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @plan_comment.user_id %></dd>
+
+      <dt>Body</dt>
+      <dd><%= @plan_comment.body %></dd>
+
+      <dt>Improvement plan</dt>
+      <dd><%= @plan_comment.improvement_plan_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/plan_comments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/plan_comments/<%= @plan_comment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_plan_comment/<%= @plan_comment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
