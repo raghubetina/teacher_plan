@@ -14,6 +14,10 @@ class ImprovementPlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :coaches,
+             :through => :coachings,
+             :source => :coach
+
   # Validations
 
   validates :title, :uniqueness => { :scope => [:user_id] }
