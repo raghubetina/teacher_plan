@@ -5,4 +5,6 @@ class Goal < ApplicationRecord
 
   # Validations
 
+  validates :description, :presence => true
+
 end
