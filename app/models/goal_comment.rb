@@ -5,4 +5,6 @@ class GoalComment < ApplicationRecord
 
   # Validations
 
+  validates :body, :presence => true
+
 end
