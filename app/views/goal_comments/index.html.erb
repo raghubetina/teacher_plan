@@ -22,8 +22,11 @@
         <td><%= goal_comment.goal.description %></td>
         <td>
           <a href="/goal_comments/<%= goal_comment.id %>" class="btn btn-primary">Show</a>
-          <a href="/goal_comments/<%= goal_comment.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_goal_comment/<%= goal_comment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == goal_comment.user %>
+            <a href="/goal_comments/<%= goal_comment.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_goal_comment/<%= goal_comment.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

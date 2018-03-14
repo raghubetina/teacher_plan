@@ -20,12 +20,14 @@
       <a href="/goal_comments" class="btn btn-primary">
         Back
       </a>
-      <a href="/goal_comments/<%= @goal_comment.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_goal_comment/<%= @goal_comment.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @goal_comment.user %>
+        <a href="/goal_comments/<%= @goal_comment.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_goal_comment/<%= @goal_comment.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

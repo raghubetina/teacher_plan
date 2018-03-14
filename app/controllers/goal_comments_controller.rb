@@ -1,4 +1,14 @@
 class GoalCommentsController < ApplicationController
+  before_action :current_user_must_be_goal_comment_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_goal_comment_user
+    goal_comment = GoalComment.find(params[:id])
+
+    unless current_user == goal_comment.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @goal_comments = GoalComment.all
 
