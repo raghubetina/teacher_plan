@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :plan_comments,
+             :dependent => :destroy
+
   has_many   :coachings,
              :foreign_key => "coach_id",
              :dependent => :destroy
