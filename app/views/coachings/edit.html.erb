@@ -33,7 +33,7 @@
           Coach
         </label>
 
-        <input type="text" id="coach_id" name="coach_id" placeholder="Coach" class="form-control" value="<%= @coaching.coach_id %>">
+        <%= select_tag(:coach_id, options_from_collection_for_select(User.all, :id, :email, @coaching.coach_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
