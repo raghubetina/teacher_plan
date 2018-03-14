@@ -29,3 +29,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Improvement plan has many coachings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Coachings
+      </li>
+
+      <% @improvement_plan.coachings.each do |coaching| %>
+        <li class="list-group-item">
+          <a href="/coachings/<%= coaching.id %>">
+            <%= coaching.improvement_plan_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/coachings/<%= coaching.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/coachings/<%= coaching.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_coaching/<%= coaching.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Improvement plan has many goals -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Goals
+      </li>
+
+      <% @improvement_plan.goals.each do |goal| %>
+        <li class="list-group-item">
+          <a href="/goals/<%= goal.id %>">
+            <%= goal.description %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/goals/<%= goal.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/goals/<%= goal.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_goal/<%= goal.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Improvement plan has many plan_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Plan Comments
+      </li>
+
+      <% @improvement_plan.plan_comments.each do |plan_comment| %>
+        <li class="list-group-item">
+          <a href="/plan_comments/<%= plan_comment.id %>">
+            <%= plan_comment.body %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/plan_comments/<%= plan_comment.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/plan_comments/<%= plan_comment.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_plan_comment/<%= plan_comment.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Improvement plan has many coaches -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Coaches
+      </li>
+
+      <% @improvement_plan.coaches.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/users/<%= user.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
