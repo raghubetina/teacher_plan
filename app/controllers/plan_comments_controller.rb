@@ -10,7 +10,7 @@ class PlanCommentsController < ApplicationController
   end
 
   def index
-    @plan_comments = PlanComment.all
+    @plan_comments = current_user.plan_comments.page(params[:page]).per(10)
 
     render("plan_comments/index.html.erb")
   end
