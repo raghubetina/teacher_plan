@@ -19,7 +19,7 @@
       <tr>
         <td><%= plan_comment.user.email %></td>
         <td><%= plan_comment.body %></td>
-        <td><%= plan_comment.improvement_plan_id %></td>
+        <td><%= plan_comment.improvement_plan.title %></td>
         <td>
           <a href="/plan_comments/<%= plan_comment.id %>" class="btn btn-primary">Show</a>
           <a href="/plan_comments/<%= plan_comment.id %>/edit" class="btn btn-warning">Edit</a>
