@@ -10,7 +10,7 @@ class GoalCommentsController < ApplicationController
   end
 
   def index
-    @goal_comments = GoalComment.all
+    @goal_comments = GoalComment.page(params[:page]).per(10)
 
     render("goal_comments/index.html.erb")
   end
