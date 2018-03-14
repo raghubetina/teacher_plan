@@ -1,6 +1,8 @@
 class GoalComment < ApplicationRecord
   # Direct associations
 
+  belongs_to :goal
+
   belongs_to :user
 
   # Indirect associations
