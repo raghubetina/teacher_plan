@@ -17,9 +17,21 @@
 
       <% @plan_comments.each do |plan_comment| %>
       <tr>
-        <td><%= plan_comment.user.email %></td>
+        <td>
+          <% if plan_comment.user.present? %>
+            <a href="/users/<%= plan_comment.user.id %>">
+              <%= plan_comment.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= plan_comment.body %></td>
-        <td><%= plan_comment.improvement_plan.title %></td>
+        <td>
+          <% if plan_comment.improvement_plan.present? %>
+            <a href="/improvement_plans/<%= plan_comment.improvement_plan.id %>">
+              <%= plan_comment.improvement_plan.title %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/plan_comments/<%= plan_comment.id %>" class="btn btn-primary">Show</a>
           

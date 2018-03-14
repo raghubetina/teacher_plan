@@ -21,7 +21,13 @@
       <dd><%= @action_step.measures_of_success %></dd>
 
       <dt>Goal</dt>
-      <dd><%= @action_step.goal_id %></dd>
+      <dd>
+        <% if @action_step.goal.present? %>
+          <a href="/goals/<%= @action_step.goal_id %>">
+            <%= @action_step.goal.description %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Lead person</dt>
       <dd><%= @action_step.lead_person %></dd>

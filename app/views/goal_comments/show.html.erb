@@ -9,10 +9,22 @@
       <dd><%= @goal_comment.body %></dd>
 
       <dt>User</dt>
-      <dd><%= @goal_comment.user_id %></dd>
+      <dd>
+        <% if @goal_comment.user.present? %>
+          <a href="/users/<%= @goal_comment.user_id %>">
+            <%= @goal_comment.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Goal</dt>
-      <dd><%= @goal_comment.goal_id %></dd>
+      <dd>
+        <% if @goal_comment.goal.present? %>
+          <a href="/goals/<%= @goal_comment.goal_id %>">
+            <%= @goal_comment.goal.description %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

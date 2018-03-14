@@ -18,8 +18,20 @@
       <% @goal_comments.each do |goal_comment| %>
       <tr>
         <td><%= goal_comment.body %></td>
-        <td><%= goal_comment.user.email %></td>
-        <td><%= goal_comment.goal.description %></td>
+        <td>
+          <% if goal_comment.user.present? %>
+            <a href="/users/<%= goal_comment.user.id %>">
+              <%= goal_comment.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if goal_comment.goal.present? %>
+            <a href="/goals/<%= goal_comment.goal.id %>">
+              <%= goal_comment.goal.description %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/goal_comments/<%= goal_comment.id %>" class="btn btn-primary">Show</a>
           

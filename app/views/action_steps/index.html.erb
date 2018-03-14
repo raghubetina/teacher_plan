@@ -26,7 +26,13 @@
         <td><%= action_step.resources_needed %></td>
         <td><%= action_step.implementation_specifics %></td>
         <td><%= action_step.measures_of_success %></td>
-        <td><%= action_step.goal.description %></td>
+        <td>
+          <% if action_step.goal.present? %>
+            <a href="/goals/<%= action_step.goal.id %>">
+              <%= action_step.goal.description %>
+            </a>
+          <% end %>
+        </td>
         <td><%= action_step.lead_person %></td>
         <td>
           <a href="/action_steps/<%= action_step.id %>" class="btn btn-primary">Show</a>

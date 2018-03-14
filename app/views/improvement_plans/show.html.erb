@@ -12,7 +12,13 @@
       <dd><%= @improvement_plan.title %></dd>
 
       <dt>Status</dt>
-      <dd><%= @improvement_plan.status_id %></dd>
+      <dd>
+        <% if @improvement_plan.status.present? %>
+          <a href="/statuses/<%= @improvement_plan.status_id %>">
+            <%= @improvement_plan.status.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
