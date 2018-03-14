@@ -17,7 +17,7 @@
 
       <% @plan_comments.each do |plan_comment| %>
       <tr>
-        <td><%= plan_comment.user_id %></td>
+        <td><%= plan_comment.user.email %></td>
         <td><%= plan_comment.body %></td>
         <td><%= plan_comment.improvement_plan_id %></td>
         <td>
