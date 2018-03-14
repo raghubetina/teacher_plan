@@ -57,6 +57,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_coaching" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for coach_id -->
+      <div class="form-group">
+        <label for="coach_id" class="control-label">
+          Coach
+        </label>
+
+        <%= select_tag(:coach_id, options_from_collection_for_select(User.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Coaching
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -88,6 +117,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_goal" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Goal
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -119,6 +177,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_plan_comment" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"></textarea>
+      </div>
+
+      <!-- Label and input for improvement_plan_id -->
+      <div class="form-group">
+        <label for="improvement_plan_id" class="control-label">
+          Improvement plan
+        </label>
+
+        <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :title), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Plan Comment
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

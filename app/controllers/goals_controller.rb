@@ -6,6 +6,8 @@ class GoalsController < ApplicationController
   end
 
   def show
+    @goal_comment = GoalComment.new
+    @action_step = ActionStep.new
     @goal = Goal.find(params[:id])
 
     render("goals/show.html.erb")

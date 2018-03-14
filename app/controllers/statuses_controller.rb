@@ -6,6 +6,7 @@ class StatusesController < ApplicationController
   end
 
   def show
+    @improvement_plan = ImprovementPlan.new
     @status = Status.find(params[:id])
 
     render("statuses/show.html.erb")
