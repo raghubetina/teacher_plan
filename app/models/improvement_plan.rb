@@ -1,6 +1,9 @@
 class ImprovementPlan < ApplicationRecord
   # Direct associations
 
+  has_many   :coachings,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
