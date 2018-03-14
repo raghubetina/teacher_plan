@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Goal Comment #<%= @goal_comment.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Body</dt>
+      <dd><%= @goal_comment.body %></dd>
+
+      <dt>User</dt>
+      <dd><%= @goal_comment.user_id %></dd>
+
+      <dt>Goal</dt>
+      <dd><%= @goal_comment.goal_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/goal_comments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/goal_comments/<%= @goal_comment.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_goal_comment/<%= @goal_comment.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
