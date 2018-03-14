@@ -48,8 +48,6 @@ class PlanCommentsController < ApplicationController
 
   def update
     @plan_comment = PlanComment.find(params[:id])
-
-    @plan_comment.user_id = params[:user_id]
     @plan_comment.body = params[:body]
     @plan_comment.improvement_plan_id = params[:improvement_plan_id]
 
