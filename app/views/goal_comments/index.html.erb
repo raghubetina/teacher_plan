@@ -19,7 +19,7 @@
       <tr>
         <td><%= goal_comment.body %></td>
         <td><%= goal_comment.user.email %></td>
-        <td><%= goal_comment.goal_id %></td>
+        <td><%= goal_comment.goal.description %></td>
         <td>
           <a href="/goal_comments/<%= goal_comment.id %>" class="btn btn-primary">Show</a>
           <a href="/goal_comments/<%= goal_comment.id %>/edit" class="btn btn-warning">Edit</a>
