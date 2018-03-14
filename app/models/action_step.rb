@@ -5,4 +5,6 @@ class ActionStep < ApplicationRecord
 
   # Validations
 
+  validates :description, :presence => true
+
 end
