@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "improvement_plans#index"
   # Routes for the Goal_comment resource:
   # CREATE
   get "/goal_comments/new", :controller => "goal_comments", :action => "new"
