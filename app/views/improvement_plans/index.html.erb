@@ -19,7 +19,7 @@
       <tr>
         <td><%= improvement_plan.user_id %></td>
         <td><%= improvement_plan.title %></td>
-        <td><%= improvement_plan.status_id %></td>
+        <td><%= improvement_plan.status.name %></td>
         <td>
           <a href="/improvement_plans/<%= improvement_plan.id %>" class="btn btn-primary">Show</a>
           <a href="/improvement_plans/<%= improvement_plan.id %>/edit" class="btn btn-warning">Edit</a>
