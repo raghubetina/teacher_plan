@@ -10,7 +10,8 @@ class GoalCommentsController < ApplicationController
   end
 
   def index
-    @goal_comments = GoalComment.page(params[:page]).per(10)
+    @q = GoalComment.ransack(params[:q])
+    @goal_comments = @q.result(:distinct => true).includes(:user, :goal).page(params[:page]).per(10)
 
     render("goal_comments/index.html.erb")
   end
