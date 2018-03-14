@@ -1,4 +1,14 @@
 class PlanCommentsController < ApplicationController
+  before_action :current_user_must_be_plan_comment_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_plan_comment_user
+    plan_comment = PlanComment.find(params[:id])
+
+    unless current_user == plan_comment.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @plan_comments = PlanComment.all
 
